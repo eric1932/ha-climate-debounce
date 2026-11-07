@@ -1,0 +1,13 @@
+{
+  "domain": "climate_debounce",
+  "name": "Climate Debounce",
+  "codeowners": ["@eric1932"],
+  "config_flow": true,
+  "dependencies": ["climate"],
+  "documentation": "https://github.com/eric1932/ha-climate-debounce",
+  "integration_type": "service",
+  "iot_class": "calculated",
+  "issue_tracker": "https://github.com/eric1932/ha-climate-debounce/issues",
+  "requirements": [],
+  "version": "0.1.0"
+}

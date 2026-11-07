@@ -1,0 +1,41 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "给温控器加缓冲",
+        "description": "先攒着发给这个温控器的命令，等你停手后只发最后的值，并且不超过每分钟的命令上限。",
+        "data": {
+          "entity_id": "温控器",
+          "delay": "停手后等待",
+          "commands_per_minute": "每分钟命令上限",
+          "one_decimal": "温度保留一位小数"
+        },
+        "data_description": {
+          "delay": "多少秒内没有新的调整，就把最后的值发出去。",
+          "commands_per_minute": "任意 60 秒内最多发几条命令。Google Nest 每台温控器限 5 条。",
+          "one_decimal": "只在 Home Assistant 用华氏度、而温控器或 Apple 家庭用摄氏度时需要：否则 HA 会把设定温度取整到华氏整数，23.5 °C 回来变成 23.3 °C，Apple 家庭的滑块会跳一下。"
+        }
+      }
+    },
+    "abort": {
+      "already_configured": "这个温控器已经加过缓冲了。",
+      "already_in_progress": "这个温控器正在设置中。"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "data": {
+          "delay": "停手后等待",
+          "commands_per_minute": "每分钟命令上限",
+          "one_decimal": "温度保留一位小数"
+        },
+        "data_description": {
+          "delay": "多少秒内没有新的调整，就把最后的值发出去。",
+          "commands_per_minute": "任意 60 秒内最多发几条命令。Google Nest 每台温控器限 5 条。",
+          "one_decimal": "只在 Home Assistant 用华氏度、而温控器或 Apple 家庭用摄氏度时需要：否则 HA 会把设定温度取整到华氏整数，23.5 °C 回来变成 23.3 °C，Apple 家庭的滑块会跳一下。"
+        }
+      }
+    }
+  }
+}

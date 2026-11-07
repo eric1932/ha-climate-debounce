@@ -1,0 +1,41 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Debounce a thermostat",
+        "description": "Hold commands for one climate entity until changes stop, then send only the latest values, within a per-minute command budget.",
+        "data": {
+          "entity_id": "Thermostat",
+          "delay": "Quiet time before sending",
+          "commands_per_minute": "Commands per minute",
+          "one_decimal": "Report temperatures with one decimal"
+        },
+        "data_description": {
+          "delay": "Seconds without a new change before the latest values are sent.",
+          "commands_per_minute": "The most commands sent in any 60 seconds. Google Nest allows 5 per thermostat.",
+          "one_decimal": "Only useful when Home Assistant uses °F but the thermostat or Apple Home uses °C: Home Assistant would otherwise round setpoints to whole °F, so 23.5 °C comes back as 23.3 °C and the Apple Home slider jumps."
+        }
+      }
+    },
+    "abort": {
+      "already_configured": "This thermostat is already being debounced.",
+      "already_in_progress": "This thermostat is already being set up."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "data": {
+          "delay": "Quiet time before sending",
+          "commands_per_minute": "Commands per minute",
+          "one_decimal": "Report temperatures with one decimal"
+        },
+        "data_description": {
+          "delay": "Seconds without a new change before the latest values are sent.",
+          "commands_per_minute": "The most commands sent in any 60 seconds. Google Nest allows 5 per thermostat.",
+          "one_decimal": "Only useful when Home Assistant uses °F but the thermostat or Apple Home uses °C: Home Assistant would otherwise round setpoints to whole °F, so 23.5 °C comes back as 23.3 °C and the Apple Home slider jumps."
+        }
+      }
+    }
+  }
+}
